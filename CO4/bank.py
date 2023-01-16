@@ -18,18 +18,28 @@ class Bank:
         print("Total available balance=",self.bal)
         
 
-    def showBal():
+    def showBal(self):
         print("Total available balance=",self.bal)
 
         
 bal=0
-
+choice=0
 accNum=input("Enter the name:")
-accNo=input("Enter your account number:")
+accNo=int(input("Enter your account number:"))
 accType=input("Enter your account type:")
 cust1=Bank(accNum,accNo,accType,bal)
-cust1.deposit(100)
-cust1.withdraw(53)
-cust1.deposit(100)
-#cust1.showBal()
+while(choice!=4):
+    choice=int(input("Enter your choice: \n1. Deposit\n2.Withdraw\n3.Check Balance\n4.Exit"))
+
+    if(choice==1):
+        depAmt=int(input("Enter how much amount you want to deposit\n"))
+        cust1.deposit(depAmt)
+    elif(choice==2):
+        withAmt=int(input("Enter how much amount you want to withdraw\n"))
+        cust1.withdraw(withAmt)
+    elif(choice==3):
+        cust1.showBal()
+
+
+
         
